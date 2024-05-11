@@ -22,7 +22,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 50px; /* Ajouter de l'espace entre les éléments */
+    gap: 20px; /* Ajouter de l'espace entre les éléments */
   }
   
   .top-nav .nav-item {

@@ -8,23 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const linkText = this.textContent.trim();
 
-    // Vérifier si le nom est déjà affiché
-    if (!this.querySelector('.name-display')) {
-      // Retirer le nom affiché précédemment s'il existe
-      if (currentNameDisplay) {
-        currentNameDisplay.remove();
+    // Vérifier si l'écran est suffisamment large (condition personnalisée)
+    if (window.innerWidth >= 768) {
+      // Vérifier si le nom est déjà affiché
+      if (!this.querySelector('.name-display')) {
+        // Retirer le nom affiché précédemment s'il existe
+        if (currentNameDisplay) {
+          currentNameDisplay.remove();
+        }
+
+        // Créer un élément span pour afficher le nom du lien
+        const nameDisplay = document.createElement('span');
+        nameDisplay.textContent = linkText;
+        nameDisplay.classList.add('name-display');
+
+        // Ajouter le nom du lien à droite de l'icône
+        this.appendChild(nameDisplay);
+
+        // Mettre à jour la référence du nom actuellement affiché
+        currentNameDisplay = nameDisplay;
       }
-
-      // Créer un élément span pour afficher le nom du lien
-      const nameDisplay = document.createElement('span');
-      nameDisplay.textContent = linkText;
-      nameDisplay.classList.add('name-display');
-
-      // Ajouter le nom du lien à droite de l'icône
-      this.appendChild(nameDisplay);
-
-      // Mettre à jour la référence du nom actuellement affiché
-      currentNameDisplay = nameDisplay;
     }
   }
 
