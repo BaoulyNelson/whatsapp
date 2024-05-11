@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Application Whatsapp</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/menuBas.css">
+  <!-- <link rel="stylesheet" href="css/recherche.css"> -->
+  <link rel="stylesheet" href="css/formulaire.css">
+</head>
+
+<body>
+
+  <!-- HTML -->
+  <div class="top-nav">
+    <ul class="nav">
+      <li class="nav-item search-item">
+        <a id="searchIcon" class="nav-link search-icon" href="#" onclick="toggleSearchForm()"><i
+            class="fas fa-search"></i></a>
+       <!-- Votre formulaire avec les classes pour cibler les styles dans le fichier CSS externe -->
+<form id="searchForm" class="search-form" style="display: none;">
+  <div class="search-wrapper">
+    <input type="search" id="mySearch" name="q" placeholder="Rechercher..." oninput="searchFunction(this.value)">
+    <span class="back-icon" onclick="goBack()">&#8592;</span>
+  </div>
+  <i id="message"></i>
+</form>
+
+
+      </li>
+
+      <!-- Ajoutez cet élément input hidden pour choisir des fichiers -->
+      <input type="file" id="fileInput" style="display: none;" accept=".jpg, .jpeg, .png, .mp4" multiple />
+
+      <!-- L'icône de la caméra -->
+      <a class="nav-link" href="#" onclick="openFileExplorer()"><i id="cameraIcon" class="fas fa-camera"></i></a>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i id="ellipsisIcon" class="fas fa-ellipsis-v"></i></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bottom-nav">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-comment"></i> Discussions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-bell"></i> Actus</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-users"></i> Communauté</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-phone"></i> Appels</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <script src="script/script.js"></script>
+  <script src="script/recherche.js"></script>
+  <script src="script/camera.js"></script>
+  <script src="script/filtrage.js"></script>
+  <script src="script/panneau.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

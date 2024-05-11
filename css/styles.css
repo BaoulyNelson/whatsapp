@@ -1,0 +1,42 @@
+/* Styles pour la barre de navigation en haut sur les petits écrans */
+.top-nav {
+  display: none; /* Cachée par défaut sur les grands écrans */
+}
+
+@media screen and (max-width: 768px) {
+  .top-nav {
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    display: flex;
+    justify-content: center; /* Placer les éléments au centre horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+  }
+  
+  .top-nav .nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 50px; /* Ajouter de l'espace entre les éléments */
+  }
+  
+  .top-nav .nav-item {
+    padding: 10px 20px;
+  }
+
+  /* Ajoute de l'espace entre les icônes */
+  .top-nav .nav-item:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .top-nav .nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+}
